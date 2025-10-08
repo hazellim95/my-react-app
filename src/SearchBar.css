@@ -1,0 +1,8 @@
+input[type="text"] {
+    width: 400px; /* Sets a fixed width of 200 pixels */
+    height: 30px; /* Sets a fixed height of 30 pixels */
+}   
+
+#searchButton {
+    color: rgb(56, 89, 91)
+}
