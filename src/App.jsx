@@ -17,7 +17,6 @@ function App() {
     <>
       <h1>Jammming</h1>
       <SearchBar />
-      <SearchResults />
 
       Hello, Codecademy!
       {/* <p>This is a sentence.</p>
