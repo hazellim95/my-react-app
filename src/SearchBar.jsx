@@ -17,7 +17,8 @@ function SearchBar() {
                     id="searchBar" 
                     type="text" 
                     onChange={handleUserInput} 
-                    value={userInput}>
+                    value={userInput}
+                >
                 </input>
                 <div>
                     <button id="searchButton">Search</button>

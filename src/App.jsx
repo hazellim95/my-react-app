@@ -1,12 +1,12 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import SearchBar from './SearchBar.jsx'
-import SearchResults from './SearchResults.jsx'
-import Playlist from './Playlist.jsx'
-import Tracklist from './Tracklist.jsx'
-import Track from './Track.jsx'
+import { useState } from 'react';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import './App.css';
+import SearchBar from './SearchBar.jsx';
+import SearchResults from './SearchResults.jsx';
+import Playlist from './Playlist.jsx';
+import Tracklist from './Tracklist.jsx';
+import Track from './Track.jsx';
 
 
 
