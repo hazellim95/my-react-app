@@ -1,10 +1,12 @@
 import { useState } from 'react';
 
-function Track() {
+function Track(props) {
+    const trackName = props.trackName;
     return (
         <>
             <div>
-                <p>Track Name</p>
+                <p>{trackName}</p>
+                <button>Select</button>
             </div>
         </>
     )
