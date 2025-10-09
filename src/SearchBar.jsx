@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './SearchBar.css';
-import SearchResults from './SearchResults.jsx'
+import SearchResults from './SearchResults.jsx';
 
 
 function SearchBar() {
@@ -8,7 +8,7 @@ function SearchBar() {
     function handleUserInput(e) {
         setUserInput(e.target.value);
     }
-    
+
     return (
         <>
             <div>
@@ -23,7 +23,7 @@ function SearchBar() {
                     <button id="searchButton">Search</button>
                 </div>
             </div>
-            <SearchResults receivedText={userInput}/>
+            <SearchResults receivedText={userInput} />
         </>
     )
 }
