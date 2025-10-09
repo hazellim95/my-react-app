@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './SearchResults.css';
-import Track from './Track.jsx'
+import Tracklist from './Tracklist.jsx'
+import Playlist from './Playlist.jsx'
 
 function SearchResults(props) {
     const receivedText = props.receivedText;
@@ -9,10 +10,10 @@ function SearchResults(props) {
             <p>Search results:</p>
             <div id="container">
                 <div id="searchResults">
-                    <p>{receivedText}</p>
+                    <Tracklist receivedText={receivedText}/>
                 </div>
                 <div id="playlist">
-                    <Track />
+                    <Playlist />
                 </div>
             </div>
         </>
