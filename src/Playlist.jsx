@@ -1,7 +1,8 @@
 import { useState } from 'react';
 
 function Playlist() {
-    const selectedSongs = ['Selected Song 1', 'Selected Song 2', 'Selected Song 3']
+    const selectedSongs = ['Selected Song 1', 'Selected Song 2', 'Selected Song 3'];
+
     return (
         <>
             <div>

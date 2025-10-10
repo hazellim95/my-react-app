@@ -13,6 +13,7 @@ function Tracklist(props) {
     return (
         <>
         <div>
+            <p>{receivedText}</p>
             <ul>
                 {trackNames.map((trackName, index) => (
                     <li key={index}><Track trackName={trackName}/></li>

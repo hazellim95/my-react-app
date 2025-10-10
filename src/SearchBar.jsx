@@ -21,7 +21,7 @@ function SearchBar() {
                 >
                 </input>
                 <div>
-                    <button id="searchButton">Search</button>
+                    <button id="searchButton" onClick={() => alert(`You entered: ${userInput}`)}>Search</button>
                 </div>
             </div>
             <SearchResults receivedText={userInput} />
