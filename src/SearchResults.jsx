@@ -62,8 +62,8 @@ function SearchResults(props) {
             //     )
 
             const resultList = result.tracks.items?.map(
-                    ({name, artists}) =>
-                    `${name} by ${artists.map(artist => artist.name).join(', ')}`
+                    ({name, artists, album}) =>
+                    `${name} by ${artists.map(artist => artist.name).join(', ')}, from the album ${album.name}`
                 )
 
 
