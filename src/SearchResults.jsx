@@ -15,7 +15,7 @@ function SearchResults(props) {
     
     useEffect(() => {
 
-        const token = 'BQDcGrxS-vEZpqv1bAezTbD7SgjdUG48z2PwPu2MzkjZ5eLhXgpLmP05SdEKCCoZLnXS5IYy-ahT4HOs6P5-xSldhDufnGeKgytpHwsVge66Jz__K_hGSUdG-0P6WGtLJKANZJim6yadlRWe-BTU0FhD4os5QnGknn-17zOgtX9zxYz-5oCQNgdaRwFF2gkrS4ClBwCj2A96DLVgwZ_wUr7qSblE5Bq7J83K4_IDOnGdBs_kBl9fXhibiUM8atGO7H0G-mzMnNQ_rPMfetsP2wHBLRlhLp9DP0bgmITZ';
+        const token = 'BQD6FfvYATLv7PlJtHfKOq8WhcHf7CL_dQhkx3AjBipjDs1Zca2fXGq3Gnw5ZTiH9gH2M3oJLaJWMelZRmR7QIX3SVkMrNawpOkDliH1rd5cXq9zhELQGwxSH9XK7KD6XsqG_cav-RdBc9IBkTxxz25tlE7GHFN7-5CvwH2lO6Vh-bZh58KmFNfE32-4n12w4XmzA9l-Ndrp6exzF-VPVuxCv5z3mxkIfkNTNW6libxbpryojceTM_gsQWnl1wSwDOt4RJP2rpFfxrKe-ERup7NNHM6F4n5w_FyEecr6';
 
         const fetchData = async () => {
         try {
@@ -45,7 +45,7 @@ function SearchResults(props) {
             
             // 
             const response = await fetchWebApi(
-                    'v1/search?q=remaster%2520track%3ADoxy%2520artist%3AMiles%2520Davis&type=track', 'GET')
+                    'v1/search?q=remaster%2520track%3ATaylor%2520Swift&type=track', 'GET')
             
 
             if (!response.ok) {
@@ -55,7 +55,6 @@ function SearchResults(props) {
             
             console.log(typeof result);
             console.log(result.tracks.items);
-            console.log(typeof result.items);
 
             // const resultList = result.items?.map(
             //         ({name, artists}) =>
