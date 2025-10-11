@@ -45,7 +45,7 @@ function SearchResults(props) {
             
             // 
             const response = await fetchWebApi(
-                    'v1/search?q=remaster%2520track%3ATaylor%2520Swift&type=track', 'GET')
+                    'v1/search?q=remaster%2520track%3ATaylorSwift&type=track', 'GET')
             
 
             if (!response.ok) {
