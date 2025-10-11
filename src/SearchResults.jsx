@@ -43,9 +43,13 @@ function SearchResults(props) {
             // const response = await fetchWebApi(
             //         'v1/me/top/tracks?time_range=long_term&limit=5', 'GET')
             
-            // 
-            const response = await fetchWebApi(
-                    'v1/search?q=remaster%2520track%3ATaylorSwift&type=track', 'GET')
+            
+            let endPoint = 'v1/search?q=remaster%2520track%3A' + receivedText + '&type=track';
+
+            const response = await fetchWebApi(endPoint, 'GET');
+
+            // const response = await fetchWebApi(
+            //         'v1/search?q=remaster%2520track%3ATaylorSwift&type=track', 'GET')
             
 
             if (!response.ok) {
