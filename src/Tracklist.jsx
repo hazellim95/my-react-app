@@ -3,6 +3,7 @@ import Track from './Track.jsx'
 
 function Tracklist(props) {
     const receivedText = props.receivedText;
+    const receivedData = props.receivedData;
 
     // Implement function that takes the receivedText and inputs it into the spotify API to search for tracks
 
@@ -15,7 +16,7 @@ function Tracklist(props) {
         <div>
             <p>{receivedText}</p>
             <ul>
-                {trackNames.map((trackName, index) => (
+                {receivedData.map((trackName, index) => (
                     <li key={index}><Track trackName={trackName}/></li>
                 ))}
             </ul>

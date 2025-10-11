@@ -51,17 +51,13 @@ function SearchResults(props) {
             
             console.log(result.items);
             console.log(typeof result.items);
-            console.log(
-                result.items?.map(
-                    ({name, artists}) =>
-                    `${name} by ${artists.map(artist => artist.name).join(', ')}`
-                )
-            );
 
             const resultList = result.items?.map(
                     ({name, artists}) =>
                     `${name} by ${artists.map(artist => artist.name).join(', ')}`
                 )
+
+            console.log(resultList)
 
 
             setData(resultList);
@@ -92,11 +88,8 @@ function SearchResults(props) {
         <>
             <p>Search results:</p>
             <div id="container">
-                <p>Fetched Data:</p>
-                {/* Render your data here */}
-                <pre>{JSON.stringify(data, null, 2)}</pre>
                 <div id="searchResults">
-                    <Tracklist receivedText={receivedText}/>
+                    <Tracklist receivedText={receivedText} receivedData={data}/>
                 </div>
                 <div id="playlist">
                     <Playlist />
