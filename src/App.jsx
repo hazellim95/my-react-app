@@ -18,7 +18,6 @@ function App() {
       <h1>Jammming</h1>
       <SearchBar />
 
-      Hello, Codecademy!
       {/* <p>This is a sentence.</p>
       <div>
         <a href="https://vite.dev" target="_blank">

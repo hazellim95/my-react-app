@@ -40,22 +40,33 @@ function SearchResults(props) {
             // }
 
             //const response = await fetch('https://api.spotify.com');
+            // const response = await fetchWebApi(
+            //         'v1/me/top/tracks?time_range=long_term&limit=5', 'GET')
+            
+            // 
             const response = await fetchWebApi(
-                    'v1/me/top/tracks?time_range=long_term&limit=5', 'GET')
+                    'v1/search?q=remaster%2520track%3ADoxy%2520artist%3AMiles%2520Davis&type=album', 'GET')
             
-            
+
             if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
             }
             const result = await response.json();
             
-            console.log(result.items);
+            console.log(typeof result);
+            console.log(result.albums.items);
             console.log(typeof result.items);
 
-            const resultList = result.items?.map(
+            // const resultList = result.items?.map(
+            //         ({name, artists}) =>
+            //         `${name} by ${artists.map(artist => artist.name).join(', ')}`
+            //     )
+
+            const resultList = result.albums.items?.map(
                     ({name, artists}) =>
                     `${name} by ${artists.map(artist => artist.name).join(', ')}`
                 )
+
 
             console.log(resultList)
 
