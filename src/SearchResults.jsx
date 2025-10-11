@@ -45,7 +45,7 @@ function SearchResults(props) {
             
             // 
             const response = await fetchWebApi(
-                    'v1/search?q=remaster%2520track%3ADoxy%2520artist%3AMiles%2520Davis&type=album', 'GET')
+                    'v1/search?q=remaster%2520track%3ADoxy%2520artist%3AMiles%2520Davis&type=track', 'GET')
             
 
             if (!response.ok) {
@@ -54,7 +54,7 @@ function SearchResults(props) {
             const result = await response.json();
             
             console.log(typeof result);
-            console.log(result.albums.items);
+            console.log(result.tracks.items);
             console.log(typeof result.items);
 
             // const resultList = result.items?.map(
@@ -62,7 +62,7 @@ function SearchResults(props) {
             //         `${name} by ${artists.map(artist => artist.name).join(', ')}`
             //     )
 
-            const resultList = result.albums.items?.map(
+            const resultList = result.tracks.items?.map(
                     ({name, artists}) =>
                     `${name} by ${artists.map(artist => artist.name).join(', ')}`
                 )
