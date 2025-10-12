@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import Track from './Track.jsx'
+import PlaylistTrack from './PlaylistTrack.jsx'
 
 function Playlist(props) {
     // Retrieve selected songs from the search results
@@ -12,7 +12,7 @@ function Playlist(props) {
             <h2>My Playlist</h2>
             <div>
                 <ul>
-                    {selectedSongs.map((trackName, index) => (<li key={index}><Track trackName={trackName}/></li>))}
+                    {selectedSongs.map((trackName, index) => (<li key={index}><PlaylistTrack trackName={trackName}/></li>))}
                 </ul>
             </div>
         </>
