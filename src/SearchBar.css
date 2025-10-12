@@ -4,5 +4,6 @@ input[type="text"] {
 }   
 
 #searchButton {
-    color: rgb(56, 89, 91)
+    color: rgb(56, 89, 91);
+    margin-top: 20px;
 }
