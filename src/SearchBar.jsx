@@ -20,7 +20,7 @@ function SearchBar() {
       // like sending it to an API, updating other parts of the state, etc.
         const token = 'BQBntXtK2QW_QvR-gjorrBIFlkILBe2H9XPn3OE06EHkXN9B_uuzpZR9ld0Hp30uU8gJqimDwufsjh_poyaGxnAbheep1Ju18pG8ZvmxX2HuZhtZrPO9HuBn4KRz3C56uJcDHtmyJe-TBBtU9v09LTz6T_x6fmj7tk_-GILSQABnp8bDp5NJWIOF2ejt7im-908TIDe1ru908PzzROGg-Ixfp2Hil7ILsuxG5ir8SYN9qw8Ai2cLKT2dzt6ArUJiISBqYwKyWBOyVWIlhZTVpn9KwxnBSB5HEj9xGLo7';
 
-        
+        // Fetch search results from Spotify API
         const fetchData = async () => {
         try {
 
@@ -80,15 +80,14 @@ function SearchBar() {
     }
 
 
-    if (loading) return <p>Loading data...</p>
-    if (error) return (
-        <>
-            <p>Search results:</p>
-            <div id="container">
-                <p>Error: {error.message}</p>
-            </div>
-        </>
-    )
+    // if (loading) return <p>Loading data...</p>
+    // if (error) return (
+    //     <>
+    //         <div id="container">
+    //             <p>Error: {error.message}</p>
+    //         </div>
+    //     </>
+    // )
 
     return (
         <>
@@ -105,7 +104,7 @@ function SearchBar() {
                     <button id="searchButton" onClick={handleClick}>Search</button>
                 </div>
             </div>
-            <SearchResults receivedText={userInput} receivedData={data}/>
+            <SearchResults receivedText={userInput} receivedData={data} loading={loading} error={error}/>
         </>
     )
 }

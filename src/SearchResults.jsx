@@ -8,6 +8,8 @@ import { Buffer } from 'buffer';
 function SearchResults(props) {
     const receivedText = props.receivedText;
     const receivedData = props.receivedData;
+    const loading = props.loading;
+    const error= props.error;
 
 
     // if (loading) return <p>Loading data...</p>
@@ -22,10 +24,9 @@ function SearchResults(props) {
 
     return (
         <>
-            <p>Search results:</p>
             <div id="container">
                 <div id="searchResults">
-                    <Tracklist receivedText={receivedText} receivedData={receivedData}/>
+                    <Tracklist receivedText={receivedText} receivedData={receivedData} loading={loading} error={error}/>
                 </div>
                 <div id="playlist">
                     <Playlist />

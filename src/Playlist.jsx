@@ -5,6 +5,7 @@ function Playlist() {
 
     return (
         <>
+            <h2>My Playlist</h2>
             <div>
                 <ul>
                     {selectedSongs.map((trackName, index) => (<li key={index}>{trackName}</li>))}
