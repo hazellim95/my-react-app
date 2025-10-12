@@ -2,11 +2,17 @@ import { useState } from 'react';
 
 function Track(props) {
     const trackName = props.trackName;
+    
+    function handleClick() {
+        alert(`${trackName} clicked!`)
+
+    }
+
     return (
         <>
             <div>
                 <p>{trackName}</p>
-                <button>Select</button>
+                <button onClick={handleClick}>Select</button>
             </div>
         </>
     )
