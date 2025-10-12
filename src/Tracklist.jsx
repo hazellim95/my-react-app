@@ -10,7 +10,7 @@ function Tracklist(props) {
         <div>
             <p>{receivedText}</p>
             <ul>
-                {receivedData.map((trackName, index) => (
+                {receivedData?.map((trackName, index) => (
                     <li key={index}><Track trackName={trackName}/></li>
                 ))}
             </ul>
