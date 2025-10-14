@@ -1,17 +1,21 @@
 import { useState } from 'react';
 import Playlist from './Playlist.jsx';
 
-let selectedSongs = [''];
-
 function Track(props) {
     const trackName = props.trackName;
-    const [selected, setSelected] = useState(null);
-    
-    const handleClick = () => {
-        setSelected(true);
-        selectedSongs.push(trackName)
-        console.log(`${trackName} Selected: ${selected}`);
+    const selectedSongs= props.selectedSongs;
+    const setSelectedSongs= props.setSelectedSongs;
+
+    const handleSelect = (selectedSongs, trackName) => {
+        // let copyArray = [...selectedSongs];
+        // copyArray.push(trackName);
+        // selectedSongs.push(trackName);  
+        setSelectedSongs((prevItems) => [...prevItems, trackName]);
+        console.log(`${trackName} pushed to selectedSongs`);
         console.log(`Selected Songs: ${selectedSongs}`);
+        alert('Clicked')
+        // console.log(`${trackName} Selected: ${selected}`);
+        // console.log(`Selected Songs: ${selectedSongs}`);
         // alert(`${trackName} clicked: ${selected}`);
     }
 
@@ -19,11 +23,11 @@ function Track(props) {
         <>
             <div>
                 <p>{trackName}</p>
-                <button onClick={handleClick}>Select</button>
+                <button onClick={() => handleSelect(selectedSongs, trackName)}>Select</button>
             </div>
             
         </>
     )
 }
 
-export { Track, selectedSongs } ;
+export default Track;

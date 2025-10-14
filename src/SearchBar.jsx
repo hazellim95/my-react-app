@@ -18,7 +18,7 @@ function SearchBar() {
         // alert(`You entered: ${userInput}`);
       // You can now use inputValue for further processing,
       // like sending it to an API, updating other parts of the state, etc.
-        const token = 'BQAB26AoNe2xYtUfv8x7jN4o4l5bT6F3dPQjCmmcy0_wm4SmLn1I8QNXAMQo_mlhnif282B6wTUgXyE0L8IfJ-tA2drrfuv-ZA6297uWgmou4Xc8ip0L2HWLc03ivw4sY-5Ok0KxHIgTjDWj6hJ6_bEAiw-qD8qyPmFVl4xtO3rlNeF4nZaL97fNR-vdYu9VBYRd-DKULhvo2o-AQxtc37wKUSaQ7T4F1yqE_R1FRR7XjpUMKWoAIBEpzszdZFm6xPzFdiv5k9A0cegnilAlDCU-uaQ5gqoQxdOgGllu';
+        const token = 'BQBNdnjhxOdadWhPye54KodQDRpyXytqvQCS1vNqip2uEDLQYSxhEEXYHwqOB1QAUDfiseVfjCPphsCQNFGmU0ce757zpfydJ--0uAduurEdjokSauAM7O7Nr9nrAeL4CC-hF6UGFVO8jY0U3kJDNbWzi1TN5suUmNVzhYRoOqlw1ULRQ1AH-pvFbjRvCHTezWt3ITy1h_Cy9zTngGdO7j5tuxAaRAe-r_e_cmhGYVBtlkub17TdGLBRLEkE8z09B-ygA1LGid0XQx2RSktvEiIND-3-6zA4Wr8xz8Je';
 
         // Fetch search results from Spotify API
         const fetchData = async () => {
@@ -37,7 +37,7 @@ function SearchBar() {
             }
 
             
-            let endPoint = 'v1/search?q=remaster%2520track%3A' + userInput + '&type=track';
+            let endPoint = 'v1/search?q=remaster%2520track%3A' + userInput + '&type=track&limit=5';
 
             const response = await fetchWebApi(endPoint, 'GET');
 

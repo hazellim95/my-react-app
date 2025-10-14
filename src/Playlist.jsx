@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 import PlaylistTrack from './PlaylistTrack.jsx'
-import { Track, selectedSongs } from './Track.jsx'
+//import { Track, selectedSongs } from './Track.jsx'
 
 function Playlist(props) {
-    // Retrieve selected songs from the search results
-    console.log(`Selected Songs: ${selectedSongs}`)
+    let selectedSongs = props.selectedSongs;
+    let setSelectedSongs = props.setSelectedSongs;
+    console.log(`selectedSongs: ${selectedSongs}`)
 
     return (
         <>

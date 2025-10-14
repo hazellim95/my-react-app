@@ -11,6 +11,7 @@ function SearchResults(props) {
     const loading = props.loading;
     const error= props.error;
 
+    const [selectedSongs, setSelectedSongs] = useState([])
 
     // if (loading) return <p>Loading data...</p>
     // if (error) return (
@@ -21,15 +22,16 @@ function SearchResults(props) {
     //         </div>
     //     </>
     // )
+    
 
     return (
         <>
             <div id="container">
                 <div id="searchResults">
-                    <Tracklist receivedText={receivedText} receivedData={receivedData} loading={loading} error={error}/>
+                    <Tracklist receivedText={receivedText} receivedData={receivedData} loading={loading} error={error} selectedSongs={selectedSongs} setSelectedSongs={setSelectedSongs}/>
                 </div>
                 <div id="playlist">
-                    <Playlist />
+                    <Playlist selectedSongs={selectedSongs} setSelectedSongs={setSelectedSongs}/>
                 </div>
             </div>
         </>

@@ -1,11 +1,13 @@
 import { useState } from 'react';
-import { Track, selectedSongs } from './Track.jsx';
+import Track from './Track.jsx';
 
 function Tracklist(props) {
     const receivedText = props.receivedText;
     const receivedData = props.receivedData;
     const loading = props.loading;
     const error= props.error;
+    const selectedSongs= props.selectedSongs;
+    const setSelectedSongs= props.setSelectedSongs;
 
 
     if (loading) return <p>Loading data...</p>
@@ -24,7 +26,7 @@ function Tracklist(props) {
             <h2>Search Results</h2>
             <ul>
                 {receivedData?.map((trackName, index) => (
-                    <li key={index}><Track trackName={trackName}/></li>
+                    <li key={index}><Track trackName={trackName} selectedSongs={selectedSongs} setSelectedSongs={setSelectedSongs}/></li>
                 ))}
             </ul>
         </div>
