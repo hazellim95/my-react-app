@@ -1,12 +1,17 @@
 import { useState } from 'react';
+import Playlist from './Playlist.jsx';
+
+let selectedSongs = [''];
 
 function Track(props) {
     const trackName = props.trackName;
     const [selected, setSelected] = useState(null);
     
-    function handleClick() {
+    const handleClick = () => {
         setSelected(true);
+        selectedSongs.push(trackName)
         console.log(`${trackName} Selected: ${selected}`);
+        console.log(`Selected Songs: ${selectedSongs}`);
         // alert(`${trackName} clicked: ${selected}`);
     }
 
@@ -21,4 +26,4 @@ function Track(props) {
     )
 }
 
-export default Track;
+export { Track, selectedSongs } ;

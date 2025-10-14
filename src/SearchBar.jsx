@@ -18,7 +18,7 @@ function SearchBar() {
         // alert(`You entered: ${userInput}`);
       // You can now use inputValue for further processing,
       // like sending it to an API, updating other parts of the state, etc.
-        const token = 'BQA1mxU3WxVjLEzu1BfOcGZZVSLGZmRzGoMT4FiMcaH1cyZskrE7mtlHy7MSidIS_J-seAvLujIAM3jWSJ8rTmIwZ4z7wjK-oLYvIsow_nv-IseXBHElEoIgFq8rthlsJK4w5oDTchDRSbVIrG0bqJBDvkzvPczN3rBHSgHH6Q0ipI7XvzDBJjTb93qx18Ndvj5EdLc_4wO_ls2XjnJ06RpYeDwjs5391Xj9oE_GDWeYJ0hI6B2l8DvMZBuiqB9XQZQYWUeUYuPBz3QbejzeNTPNzjL5HXEDi-lp1Z1Y';
+        const token = 'BQAB26AoNe2xYtUfv8x7jN4o4l5bT6F3dPQjCmmcy0_wm4SmLn1I8QNXAMQo_mlhnif282B6wTUgXyE0L8IfJ-tA2drrfuv-ZA6297uWgmou4Xc8ip0L2HWLc03ivw4sY-5Ok0KxHIgTjDWj6hJ6_bEAiw-qD8qyPmFVl4xtO3rlNeF4nZaL97fNR-vdYu9VBYRd-DKULhvo2o-AQxtc37wKUSaQ7T4F1yqE_R1FRR7XjpUMKWoAIBEpzszdZFm6xPzFdiv5k9A0cegnilAlDCU-uaQ5gqoQxdOgGllu';
 
         // Fetch search results from Spotify API
         const fetchData = async () => {

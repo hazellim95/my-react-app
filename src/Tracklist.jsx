@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Track from './Track.jsx'
+import { Track, selectedSongs } from './Track.jsx';
 
 function Tracklist(props) {
     const receivedText = props.receivedText;
