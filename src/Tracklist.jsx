@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Track from './Track.jsx';
+import './Tracklist.css';
 
 function Tracklist(props) {
     const receivedText = props.receivedText;

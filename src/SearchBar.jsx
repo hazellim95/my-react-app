@@ -98,8 +98,7 @@ function SearchBar() {
                     type="text" 
                     onChange={handleUserInput} 
                     value={userInput}
-                >
-                </input>
+                />
                 <div>
                     <button id="searchButton" onClick={handleClick}>Search</button>
                 </div>

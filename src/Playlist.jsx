@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import PlaylistTrack from './PlaylistTrack.jsx'
+import './Playlist.css';
 
 function Playlist(props) {
     let selectedSongs = props.selectedSongs;
@@ -9,6 +10,8 @@ function Playlist(props) {
     return (
         <>
             <h2>My Playlist</h2>
+            <label for="playlistName">Name: </label>
+            <input type="text" id="playlistName" name="playlistName" />
             <div>
                 <ul>
                     {selectedSongs.map((trackName, index) => (<li key={index}><PlaylistTrack trackName={trackName}/></li>))}
