@@ -11,7 +11,6 @@ function Track(props) {
             setSelectedSongs((prevItems) => [...prevItems, trackName]);
             console.log(`${trackName} pushed to selectedSongs`);
             console.log(`Selected Songs: ${selectedSongs}`);
-            alert('Clicked')
         }
     }
 
