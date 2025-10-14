@@ -4,7 +4,7 @@ function PlaylistTrack(props) {
     const trackName = props.trackName
     return (
         <>
-            <p>{trackName} - I am a selected Playlist track</p>
+            <p>{trackName}</p>
         </>
     )
 }
