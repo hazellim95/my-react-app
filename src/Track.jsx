@@ -7,11 +7,12 @@ function Track(props) {
     const setSelectedSongs= props.setSelectedSongs;
 
     const handleSelect = (selectedSongs, trackName) => {
-        setSelectedSongs((prevItems) => [...prevItems, trackName]);
-        console.log(`${trackName} pushed to selectedSongs`);
-        console.log(`Selected Songs: ${selectedSongs}`);
-        alert('Clicked')
-
+        if (!selectedSongs.includes(trackName)) {
+            setSelectedSongs((prevItems) => [...prevItems, trackName]);
+            console.log(`${trackName} pushed to selectedSongs`);
+            console.log(`Selected Songs: ${selectedSongs}`);
+            alert('Clicked')
+        }
     }
 
     return (

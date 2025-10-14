@@ -37,7 +37,7 @@ function SearchBar() {
             }
 
             
-            let endPoint = 'v1/search?q=remaster%2520track%3A' + userInput + '&type=track&limit=5';
+            let endPoint = 'v1/search?q=remaster%2520track%3A' + userInput + '&type=track';
 
             const response = await fetchWebApi(endPoint, 'GET');
 
