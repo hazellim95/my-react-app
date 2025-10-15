@@ -5,7 +5,6 @@ import './Playlist.css';
 function Playlist(props) {
     let selectedSongs = props.selectedSongs;
     let setSelectedSongs = props.setSelectedSongs;
-    // console.log(`selectedSongs: ${selectedSongs}`)
 
     // Create state for playlistName
     const [userInput, setUserInput] = useState('');
@@ -94,7 +93,17 @@ function Playlist(props) {
             />
             <div>
                 <ul>
-                    {selectedSongs.map((trackName, index) => (<li key={index}><PlaylistTrack trackName={trackName}/></li>))}
+                    {selectedSongs.map(({trackName, artists, album, id, uri}, index) => (
+                        <li key={index}>
+                            <PlaylistTrack 
+                                trackName={trackName} 
+                                artists={artists} 
+                                album={album}
+                                id={id} 
+                                uri={uri}
+                            />
+                        </li>
+                    ))}
                 </ul>
             </div>
             <button onClick={handleClick}>Save to Spotify</button>

@@ -11,6 +11,7 @@ function SearchResults(props) {
     const loading = props.loading;
     const error= props.error;
 
+    // Initialise selectedSongs state as an empty list
     const [selectedSongs, setSelectedSongs] = useState([])
 
     // if (loading) return <p>Loading data...</p>

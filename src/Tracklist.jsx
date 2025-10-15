@@ -26,8 +26,10 @@ function Tracklist(props) {
         <div>
             <h2>Search Results</h2>
             <ul>
-                {receivedData?.map((trackName, index) => (
-                    <li key={index}><Track trackName={trackName} selectedSongs={selectedSongs} setSelectedSongs={setSelectedSongs}/></li>
+                {receivedData?.map(([trackName, artists, album, id, uri], index) => (
+                    <li key={index}>
+                        <Track trackName={trackName} artists={artists} album={album} id={id} uri={uri} selectedSongs={selectedSongs} setSelectedSongs={setSelectedSongs}/>
+                    </li>
                 ))}
             </ul>
         </div>
