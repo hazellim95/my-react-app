@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './PlaylistTrack.css'
 
 function PlaylistTrack(props) {
     const trackName = props.trackName;
@@ -9,8 +10,10 @@ function PlaylistTrack(props) {
 
     return (
         <>
+        <div id="container1">
             <p>{trackName} by {artists}, {album}</p>
-            <button>Remove</button>
+            <button id="removeButton">Remove</button>
+        </div>
         </>
     )
 }

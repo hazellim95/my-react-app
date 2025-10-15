@@ -1,5 +1,5 @@
 label {
-    display:inline-block;
+    display: block;
 }
 
 #playlistName {
@@ -7,5 +7,6 @@ label {
     width: 250px; /* Sets a fixed width of 200 pixels */
     height: 30px; /* Sets a fixed height of 30 pixels */
     margin-left: 10px;
+    
     background-color:rgb(233, 187, 233);
 }
