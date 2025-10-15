@@ -10,6 +10,7 @@ function PlaylistTrack(props) {
     return (
         <>
             <p>{trackName} by {artists}, {album}</p>
+            <button>Remove</button>
         </>
     )
 }
