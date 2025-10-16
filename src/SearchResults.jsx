@@ -10,6 +10,7 @@ function SearchResults(props) {
     const receivedData = props.receivedData;
     const loading = props.loading;
     const error= props.error;
+    const authError = props.authError;
 
     // Initialise selectedSongs state as an empty list
     const [selectedSongs, setSelectedSongs] = useState([])
@@ -29,7 +30,7 @@ function SearchResults(props) {
         <>
             <div id="container">
                 <div id="searchResults">
-                    <Tracklist receivedText={receivedText} receivedData={receivedData} loading={loading} error={error} selectedSongs={selectedSongs} setSelectedSongs={setSelectedSongs}/>
+                    <Tracklist receivedText={receivedText} receivedData={receivedData} loading={loading} error={error} authError={authError} selectedSongs={selectedSongs} setSelectedSongs={setSelectedSongs}/>
                 </div>
                 <div id="playlist">
                     <Playlist selectedSongs={selectedSongs} setSelectedSongs={setSelectedSongs}/>

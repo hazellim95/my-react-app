@@ -9,6 +9,7 @@ function Tracklist(props) {
     const error= props.error;
     const selectedSongs= props.selectedSongs;
     const setSelectedSongs= props.setSelectedSongs;
+    const authError = props.authError;
 
 
     if (loading) return <p>Loading data...</p>
@@ -20,6 +21,16 @@ function Tracklist(props) {
             </div>
         </>
     )
+    
+    if (authError) return (
+         <>
+            <h2>Search Results</h2>
+            <div id="container">
+                <p>Error: {authError.message}</p>
+            </div>
+        </>
+    )
+    
 
     return (
         <>
