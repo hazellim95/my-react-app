@@ -22,7 +22,7 @@ function Playlist(props) {
 
         // if playlistName is not empty, save to Spotify
         if (userInput) {
-            const token = 'BQBV6RZ-4xG1tLMbARfPXBwm3T5gfkViZ0xuYbAh6kiXF_IiffMKQMF7EbzT4u9Ud49zp16C39IQ2HepDtoa4NkeCg4CuO91VCggYDgZUOlVrYDSGXf2DzK-obGB_La5njhdJ_deekYm54jwMw8ys6C-exjyJ7jDUa1A0vpT3RpbrzbZJheVErpuk-CQBbxiIGycjLGXE3KdwtjolMMPvTLFd61LDlvC8vM1umGPGYFxteZJ03jlVYkAM5coJVsr5AHJ-EHMJcpk4CNyYnwFdVSAQhHmX3Mg7t7hFPlQ';
+            const token = 'BQBZtIukaU0myPs97AYBXGvVSPcqVY9YTQSWGLuYIvFXo9qY3Hk3ddSg28GWDrRpzwK0UiwwfcryDTgZDHnfkd17hoKLDHvG_W59jrSVEZsqhQP015kALw0Qsp5S2bwk3xisB3cNHoKHDPBtqbQT0sh9bdmxH554Jm7E7Rkx1hcQzu-3OcK9zJEaw7bun3_aY6S2pasFf0_5xWnd00I5SCSPNz-5cZxqlwrDD1MA2IAxQWYs7Mi1-l0oDTsrFQ2T82YN5CeKtr_jpc7HS3bYuXLUWaE6yqVPnyuOnMNy';
 
             const fetchData = async () => {
             
@@ -101,6 +101,8 @@ function Playlist(props) {
                                 album={album}
                                 id={id} 
                                 uri={uri}
+                                selectedSongs={selectedSongs}
+                                setSelectedSongs={setSelectedSongs}
                             />
                         </li>
                     ))}
