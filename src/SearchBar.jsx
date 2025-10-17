@@ -5,6 +5,7 @@ import SearchResults from './SearchResults.jsx';
 const clientId = '77a4e36a7c0842b4b3c053d5503448fb';
 const redirectUri = 'https://example.com/callback';
 let token = '';
+let code = 'AQDE4urrR2w2bo56Dkxj5xDWEr5f-M-JxUkeG6jhKf2JFsPRSg1FPm3rgO5SfXOegHvPcL2OqlIH_BdeCzqYdu41j5JSTGaRcRkscs1CZ5saB8MayXlDnORsbHW-xJ-ujm_nbwsuwyvluwegKr7o9IKbZwsYZDh22Y8SticmCF9Ayh8dgpJbcES9dsLCdwiLMS3kSlO-J28N7csc8gUaJDsFGI_Aq8_t1cjaQ0YShCe6eSY0nBh8jgy7k4N7KLIihTgXKrCVCX4MBZm0TZEdWikXZS4z6i4';
 
 const generateRandomString = (length) => {
     const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -31,13 +32,15 @@ const base64encode = (input) => {
 const hashed = await sha256(codeVerifier);
 console.log(`hashed: ${hashed}`);
 const codeChallenge = base64encode(hashed);
+console.log(`codeChallenge: ${codeChallenge}`);
 
 const scope = 'user-read-private user-read-email';
 const authUrl = new URL("https://accounts.spotify.com/authorize")
 
-function requestUserAuth() {
+const requestUserAuth = async () => {
     //generated in the previous step
     window.localStorage.setItem('code_verifier', codeVerifier);
+    console.log(`set localStorage 'code_verifier' to ${codeVerifier}`);
 
     const params =  {
         response_type: 'code',
@@ -50,6 +53,11 @@ function requestUserAuth() {
 
     authUrl.search = new URLSearchParams(params).toString();
     window.location.href = authUrl.toString();
+
+    const urlParams = new URLSearchParams(window.location.search);
+    let code = urlParams.get('code');
+
+    return code;
 }
 
 const getToken = async code => {
@@ -72,14 +80,16 @@ const getToken = async code => {
         }),
     }
 
-    const body = await fetch(url, payload);
-    const response = await body.json();
-    console.log(`response: ${response}`);
+    try {
+        const body = await fetch(url, payload);
+        const response = await body.json();
+        console.log(`response: ${Object.keys(response)}`);
+        localStorage.setItem('access_token', response.access_token);
+    } catch(error) {
+        console.log(error);
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
 
-    localStorage.setItem('access_token', response.access_token);
-    console.log(`response.access_token: ${response.access_token}`);
-
-    return response.access_token;
 }   
 
 
@@ -99,20 +109,24 @@ function SearchBar() {
     function handleAuth() {
         // Request User Authorisation
         try {
-            requestUserAuth();
-            const urlParams = new URLSearchParams(window.location.search);
-            let code = urlParams.get('code');
-            // Request for access token
-            token = getToken(code);         //const token = 'BQBZtIukaU0myPs97AYBXGvVSPcqVY9YTQSWGLuYIvFXo9qY3Hk3ddSg28GWDrRpzwK0UiwwfcryDTgZDHnfkd17hoKLDHvG_W59jrSVEZsqhQP015kALw0Qsp5S2bwk3xisB3cNHoKHDPBtqbQT0sh9bdmxH554Jm7E7Rkx1hcQzu-3OcK9zJEaw7bun3_aY6S2pasFf0_5xWnd00I5SCSPNz-5cZxqlwrDD1MA2IAxQWYs7Mi1-l0oDTsrFQ2T82YN5CeKtr_jpc7HS3bYuXLUWaE6yqVPnyuOnMNy';
-            console.log(`token: ${token}`);  
+            code = requestUserAuth(); 
+            console.log(`code: ${code}`);
         } catch(error) {
+            console.log(error);
             setAuthError(error)
         }
-        
+    
         
     }
 
     function handleClick() {
+
+        // Request for access token
+        getToken(code);  
+        token = localStorage.getItem('access_token');
+        //token = getToken(code);         
+        //const token = 'BQBZtIukaU0myPs97AYBXGvVSPcqVY9YTQSWGLuYIvFXo9qY3Hk3ddSg28GWDrRpzwK0UiwwfcryDTgZDHnfkd17hoKLDHvG_W59jrSVEZsqhQP015kALw0Qsp5S2bwk3xisB3cNHoKHDPBtqbQT0sh9bdmxH554Jm7E7Rkx1hcQzu-3OcK9zJEaw7bun3_aY6S2pasFf0_5xWnd00I5SCSPNz-5cZxqlwrDD1MA2IAxQWYs7Mi1-l0oDTsrFQ2T82YN5CeKtr_jpc7HS3bYuXLUWaE6yqVPnyuOnMNy';
+        console.log(`token: ${token}`);  // Promise
         
         // Fetch search results from Spotify API
         const fetchData = async () => {
@@ -141,7 +155,7 @@ function SearchBar() {
             
 
             if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            throw new Error(`HTTP error!! status: ${response.status}`);
             }
             const result = await response.json();
             
